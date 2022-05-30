@@ -1,3 +1,7 @@
+/**
+ * @{author} Xyzeebit
+ * A Map class for holding codes
+*/
 class Map {
 	keys = [];
 	values = [];
@@ -10,7 +14,6 @@ class Map {
 	get(key) {
 		if(this.keys.includes(key)) {
 			let idx = this.keys.indexOf(key);
-		 //return {[(this.keys[idx])]: this.values[idx]};
 		 return this.values[idx];
 		}
 	}
@@ -107,9 +110,6 @@ result = toLower('LO5Ve');
 console.log(result)
 
 
-
-//console.l
-
 //{
   //"101": "e",
   //"108": "l",
@@ -124,3 +124,7 @@ console.log(result)
 
 
 
+module.exports = {
+    toLower,
+    toUpper
+}
