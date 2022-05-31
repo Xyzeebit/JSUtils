@@ -1,6 +1,6 @@
 /**
  * @{author} Xyzeebit
- * A Map class for holding codes
+ * A Map class for holding character codes
 */
 class Map {
 	keys = [];
@@ -37,6 +37,12 @@ class Map {
 	
 }
 
+/**
+ * @param{number} code - ASCII code that will be use
+ * to compute the upper or lower case of character
+ * @return{number} ASCII number that maps to a
+ * string character
+*/
 function getCase(code) {
 	let mapUpperToLower = new Map();
 	let mapLowerToUpper = new Map();
@@ -49,18 +55,23 @@ function getCase(code) {
 	// upper case
 	if(code > 64 && code < 91) {
 		// return lower case
-   return mapUpperToLower.get(code);
+        return mapUpperToLower.get(code);
 	}
 	
 	// lower case
 	if(code > 96 && code < 123) {
 		// return upper case
-   return mapLowerToUpper.get(code);
+        return mapLowerToUpper.get(code);
 	}
 }
 
 
-
+/** 
+ * @param{string} str - A string argument to be change
+ * to upper case
+ * @return{string} returns the upper case of
+ * the string argument
+*/
 function toUpper(str) { 
 	let newString = '';
 	
@@ -82,6 +93,12 @@ function toUpper(str) {
 	return newString;
 }
 
+/** 
+ * @param{string} str - A string argument to be change
+ * to lower case
+ * @return{string} returns the lower case of
+ * the string argument
+*/
 function toLower(str) {
 	let newString = '';
 	
@@ -103,23 +120,16 @@ function toLower(str) {
 	return newString;
 }
 
-let result = toUpper('@lov5e');
-console.log(result)
+/**
+* how to use function
+*
 
-result = toLower('LO5Ve');
-console.log(result)
-
-
-//{
-  //"101": "e",
-  //"108": "l",
-  //"111": "o",
-  //"118": "v"
-//}
-
-// small 97 - 122
-// cap 90 - 65
-// num 48 - 57
+* let result = toUpper('@lov5e');
+* console.log(result)
+* 
+* result = toLower('LO5Ve');
+* console.log(result)
+*/
 
 
 
