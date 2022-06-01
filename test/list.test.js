@@ -1,7 +1,7 @@
 describe('List', function() {
     var list, data;
     beforeEach(() => {
-        var List = require('../collections/list').List;
+        var List = require('../collections/dist/list').List;
         data = [1, 2, 5, 100];
         list = new List(data);
     });

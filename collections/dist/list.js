@@ -1,9 +1,10 @@
+"use strict";
 /**
 * @author{Xyzeebit}
 * List
 */
-var List = /** @class */ (function () {
-    function List(data) {
+class List {
+    constructor(data) {
         this.data = data;
         this.count = 0;
     }
@@ -13,20 +14,20 @@ var List = /** @class */ (function () {
      * @param{E}
      * @return{void}
     */
-    List.prototype.add = function (element) {
+    add(element) {
         if (element) {
             this.data.push(element);
             this.count++;
         }
-    };
+    }
     /**
      * function to get the list size
      * @return{number} the total elements
      * count in the list;
     */
-    List.prototype.size = function () {
+    size() {
         return this.data.length;
-    };
+    }
     /**
      * function checks if list contains a particular
      * element
@@ -34,13 +35,13 @@ var List = /** @class */ (function () {
      * @return{boolean} return true if element
      * is in the list otherwise return false
     */
-    List.prototype.contains = function (element) {
-        var found = this.data.indexOf(element);
+    contains(element) {
+        let found = this.data.indexOf(element);
         if (found) {
             return true;
         }
         return false;
-    };
+    }
     /**
      * function gets the element in the List
      * identified by index
@@ -49,14 +50,14 @@ var List = /** @class */ (function () {
      * @return{E | undefined} returns element or undefined
      * when indexed element cannot be found
     */
-    List.prototype.getElement = function (index) {
+    getElement(index) {
         if (index >= this.size() || index < 0) {
             return undefined;
         }
         else {
             return this.data[index];
         }
-    };
+    }
     /**
      * This function removes an element from
      * the list that matches the index
@@ -65,17 +66,17 @@ var List = /** @class */ (function () {
      * @return{E | undefined} returns the element
      * that is removed or undefined if not found
     */
-    List.prototype.remove = function (index) {
+    remove(index) {
         if (index >= this.size() || index < 0) {
             return undefined;
         }
         else {
-            var element = this.data[index];
+            let element = this.data[index];
             this.data.splice(index, 1);
             return element;
         }
-    };
-    return List;
-}());
+    }
+}
 module.exports.List = List;
 //export default List;
+//# sourceMappingURL=list.js.map
