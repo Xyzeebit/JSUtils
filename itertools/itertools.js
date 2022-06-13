@@ -11,7 +11,8 @@
 
 const itertools = {
     chain,
-    combinations
+    combinations,
+    compress
 }
 
 /**
@@ -68,6 +69,20 @@ function combinations(iterable, n) {
         }
     }
     return data;
+}
+
+
+/**
+ * filters one iterable with the other
+ * @param{Array} iterable
+ * @param{Array} filter - an array of boolean values
+*/
+function compress(iterable, filter) {
+    return iterable.map((arr, i) => {
+        if(filter[i]) {
+            return arr;
+        }
+    }).filter(i => i !== undefined);
 }
 
 
