@@ -46,6 +46,14 @@ describe('itertools', () => {
             const result = itertools.compress(colors, filter);
             expect(result).toEqual(data);
         });
+        
+        it('should filter one array with the other when array length a different', () => {
+            const filter = [true, false];
+            const data = ['red']
+            const result = itertools.compress(colors, filter);
+            expect(result).toEqual(data);
+        });
+    
     
     })
     
