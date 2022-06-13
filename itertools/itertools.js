@@ -13,7 +13,8 @@ const itertools = {
     chain,
     combinations,
     compress,
-    count
+    count,
+    cycle
 }
 
 /**
@@ -98,6 +99,20 @@ function count(start = 0, step = 1, stop = 10) {
         if(i === 0) return start;
         return start += step;
     });
+}
+
+/**
+ * Cycle through an iterable repeatedly
+ * @param{Array} iterable
+ * @param{number} repeat - Cycles the total value of repeat
+*/
+function cycle(iterable, repeat = 1) {
+    if(repeat === 1) return iterable;
+    let data = [];
+    for(let i = 0; i < repeat; i++) {
+        data = [...data, ...iterable];
+    }
+    return data
 }
 
 

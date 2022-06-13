@@ -63,6 +63,15 @@ describe('itertools', () => {
             data = [10, 13, 16, 19, 22];
             expect(itertools.count(10, 3, 5)).toEqual(data);
         })
-    })
+    });
+    
+    describe('cycle', () => {
+        it('should cycles through an array object', () => {
+            let data = [0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3, 0, 1, 2, 3];
+            
+            expect(itertools.cycle([0, 1, 2, 3], 4)).toEqual(data);
+        });
+    });
+    
     
 })
