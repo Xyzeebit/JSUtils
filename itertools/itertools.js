@@ -12,7 +12,8 @@
 const itertools = {
     chain,
     combinations,
-    compress
+    compress,
+    count
 }
 
 /**
@@ -83,6 +84,20 @@ function compress(iterable, filter) {
             return arr;
         }
     }).filter(i => i !== undefined);
+}
+
+/**
+ * Makes a iterator that returns evenly spaced values
+ * starting with number start
+ * @param{number} start - the start number of the iterator, initial of 0
+ * @param{number} step - the skip position, initail of 1
+ * @param{number} stop - the base length to stop the iterator when it is execeeded. Initial is 10;
+*/
+function count(start = 0, step = 1, stop = 10) {
+    return new Array(stop).fill(0).map((arr, i) => {
+        if(i === 0) return start;
+        return start += step;
+    });
 }
 
 
