@@ -9,10 +9,9 @@
  * @param{function} operator - a function to apply to the iterable object 
 */
 
-function itertools(iterable, operator) {
-    return {
-        chain
-    };
+const itertools = {
+    chain,
+    combinations
 }
 
 /**
@@ -21,16 +20,55 @@ function itertools(iterable, operator) {
  * @param{object[]} args - a variable argument iterable object
 */
 function chain(...args) {
-    if(args.length > 1) {
-        let arr = [];
-        for(let ar of args) {
-            ar.map(i => arr.push(i))
+    const arrData = [];
+    const objData = {};
+    for(let object of args) {
+        if(Array.isArray(object)) {
+            object.forEach(arr => arrData.push(arr));
+        } else {
+            Object.entries(object).map((obj, i) => objData[obj[0]] = obj[1])
         }
-        return arr;
     }
-    return args;
+    
+    if(arrData.length && Object.entries(objData).length) {
+        arrData.push(objData);
+        return arrData;
+    }
+    if(arrData.length) {
+        return arrData;
+    } 
+    if(Object.entries(objData).length) {
+        return objData;
+    }
 }
 
+/**
+ * Takes an iterable and an interger.This will creatr all 
+ * the unique combination that have n member
+ * @param{Array} iterable
+ * @param{number} n - number of combinations
+*/
+function combinations(iterable, n) {
+    if(n > iterable.length || n < 1) return;
+    if(n === iterable.length) return iterable;
+    
+    const data = [];
+    for(let i = 0; i < iterable.length; i++) {
+        let arr = [iterable[i]];
+        for(let j = i; j < iterable.length; j++) {
+            if(arr.includes(iterable[j])) {
+                continue;
+            }
+            arr.push(iterable[j])
+            if(arr.length === n) {
+                data.push(arr)
+                arr = [iterable[i]];
+            }
+            
+        }
+    }
+    return data;
+}
 
 
 
