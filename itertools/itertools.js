@@ -125,10 +125,12 @@ function cycle(iterable, repeat = 1) {
 */
 function product(numbers, alphaData) {
     const data = [];
-    return numbers.map(a => {
-        alphaData.map(b => [a, b])
-    });
-    //return data;
+     for(let a of numbers) {
+         for(let b of alphaData) {
+             data.push([a, b]);
+         }
+     }
+    return data;
 }
 
 

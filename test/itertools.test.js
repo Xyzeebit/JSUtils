@@ -82,7 +82,7 @@ describe('itertools', () => {
                 [2, 'b']
             ];
             
-            expect(itertools.product([1, 2, ], ['a', 'b'])).toContain(data);
+            expect(itertools.product([1, 2, ], ['a', 'b'])).toEqual(data);
         });
     });
     
