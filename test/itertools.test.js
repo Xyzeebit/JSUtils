@@ -73,5 +73,18 @@ describe('itertools', () => {
         });
     });
     
+    describe('product', () => {
+        it('should create a cartesian product', () => {
+            let data = [
+                [1, 'a'],
+                [1, 'b'],
+                [2, 'a'],
+                [2, 'b']
+            ];
+            
+            expect(itertools.product([1, 2, ], ['a', 'b'])).toContain(data);
+        });
+    });
+    
     
 })

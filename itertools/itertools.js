@@ -14,7 +14,8 @@ const itertools = {
     combinations,
     compress,
     count,
-    cycle
+    cycle,
+    product
 }
 
 /**
@@ -115,6 +116,20 @@ function cycle(iterable, repeat = 1) {
     return data
 }
 
+
+/**
+ * Create a cartesian product from a series of iterables
+ * @param{Array} numbers - an array of numbers
+ * @param{Array} alphaData - an array of alphabets
+ * @return{Array} returns a multi dimentional array
+*/
+function product(numbers, alphaData) {
+    const data = [];
+    return numbers.map(a => {
+        alphaData.map(b => [a, b])
+    });
+    //return data;
+}
 
 
 module.exports.itertools = itertools;
