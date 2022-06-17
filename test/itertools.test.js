@@ -94,5 +94,19 @@ describe('itertools', () => {
         });
     });
     
+    describe('starmap', () => {
+        it('should return an array of the result of the operator function', () => {
+            let data = [12, 32, 21];
+            let test = [
+                [3, 4],
+                [8, 4],
+                [3, 7]
+            ];
+            const mul = jest.fn();
+            
+            expect(itertools.starmap(test, mul)).toEqual(data);
+        });
+    });
+    
     
 })
