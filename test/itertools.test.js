@@ -86,5 +86,13 @@ describe('itertools', () => {
         });
     });
     
+    describe('repeat', () => {
+        it('should repeat a value the total times provided', () => {
+            let data = ['spam', 'spam', 'spam', 'spam'];
+            
+            expect(itertools.repeat('spam', 4)).toEqual(data);
+        });
+    });
+    
     
 })

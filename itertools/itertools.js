@@ -15,7 +15,8 @@ const itertools = {
     compress,
     count,
     cycle,
-    product
+    product,
+    repeat
 }
 
 /**
@@ -133,5 +134,19 @@ function product(numbers, alphaData) {
     return data;
 }
 
+/**
+ * This function will repeat the object for the total times provided
+ * @param{Object} object - the object to repeat
+ * @param{number} times - the times to repeat object
+ * @return{Array} returns an array of the object provided
+*/
+function repeat(object, times = 0) {
+    if(times === 0) return [object];
+    const data = [];
+    for(let i = 0; i < times; i++) {
+        data.push(object);
+    }
+    return data;
+}
 
 module.exports.itertools = itertools;
