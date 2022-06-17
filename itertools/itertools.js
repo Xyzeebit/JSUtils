@@ -149,4 +149,14 @@ function repeat(object, times = 0) {
     return data;
 }
 
+
+/**
+ * Makes an iterator that computes the function
+ * using the arguments obtain from the iterable
+ * @param{Array} iterable - a multidimentional array
+ * @param{Function} operator - a function that will be called with the value 
+ * of each iterable
+*/
+
+
 module.exports.itertools = itertools;
