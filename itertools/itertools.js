@@ -157,6 +157,8 @@ function repeat(object, times = 0) {
  * @param{Function} operator - a function that will be called with the value 
  * of each iterable
 */
-
+function starmap(iterable, operator) {
+    
+}
 
 module.exports.itertools = itertools;
