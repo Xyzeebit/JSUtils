@@ -103,8 +103,11 @@ describe('itertools', () => {
                 [3, 7]
             ];
             const mul = jest.fn((a, b) => a * b);
-            
             expect(itertools.starmap(test, mul)).toEqual(data);
+            
+            data = [7, 12, 10];
+            const plus = jest.fn((a, b) => a + b);
+            expect(itertools.starmap(test, plus)).toEqual(data);
         });
     });
     
