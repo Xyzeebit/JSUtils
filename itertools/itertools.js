@@ -16,7 +16,8 @@ const itertools = {
     count,
     cycle,
     product,
-    repeat
+    repeat,
+    starmap
 }
 
 /**
@@ -158,7 +159,9 @@ function repeat(object, times = 0) {
  * of each iterable
 */
 function starmap(iterable, operator) {
-    
+    let results = [];
+    iterable.map(args => results.push(operator(...args)));
+    return results;
 }
 
 module.exports.itertools = itertools;
